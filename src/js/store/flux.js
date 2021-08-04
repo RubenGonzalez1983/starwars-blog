@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			peopleListArray: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -20,9 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+				getActions().fetchPeopleList();
 			},
 			changeColor: (index, color) => {
 				//get the store
@@ -37,6 +36,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			fetchPeopleList: () => {
+				fetch("https://www.swapi.tech/api/people").then(function(response) {});
 			}
 		}
 	};
