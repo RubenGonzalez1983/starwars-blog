@@ -1,4 +1,5 @@
 const getState = ({ getStore, getActions, setStore }) => {
+	var apiUrl = "https://www.swapi.tech/api/";
 	return {
 		store: {
 			peopleListArray: [],
@@ -38,7 +39,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 			fetchPeopleList: () => {
-				fetch("https://www.swapi.tech/api/people").then(function(response) {});
+				fetch(`${apiUrl}/people`)
+					.then(function(response) {
+						setStore({ peopleListArray: response });
+					})
+					.catch(function(error) {
+						console.log("Oh No! There was a problem: \n", error);
+					});
 			}
 		}
 	};
