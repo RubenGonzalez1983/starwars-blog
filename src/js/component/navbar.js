@@ -15,7 +15,7 @@ export const Navbar = () => {
 			<Link to="/home">
 				<img
 					className="logo"
-					src="https://compass-ssl.xboxlive.com/assets/67/1c/671c739e-386a-4df3-9774-30e9e46eb53a.jpg?n=MSXC-StarWarsTitle-HeroAndImageCard-large-l-794x447-16x9-01.jpg"
+					src="https://i.pinimg.com/originals/17/66/da/1766da0b582ed8ab014f76c780567e3f.jpg"
 				/>
 			</Link>
 
